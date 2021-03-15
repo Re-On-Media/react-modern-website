@@ -5,31 +5,38 @@ import styles from "./Slider.module.css";
 const slideVariants = {
   hidden: {
     x: "200vw",
-    opacity: 0,
   },
   show: {
     x: "0vw",
-    opacity: 1,
     transition: {
       ease: "easeInOut",
-      duration: 1,
+      duration: 0.5,
     },
   },
   exit: {
     x: "-100vw",
-    opacity: 0,
     transition: {
       ease: "easeInOut",
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
 
-const Slide = ({ text, class1 }) => {
+const Slide = ({ title, img, description, aditionalClass }) => {
   return (
-    <div className={styles[class1]}>
-      <div>{text}</div>
-    </div>
+    <motion.div
+      variants={slideVariants}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      className={`${styles[aditionalClass]} ${styles.slideContainer}`}
+    >
+      <h1 className={styles.title}>{title}</h1>
+      <div className={styles.info}>
+        <div className={styles.img}>{img}</div>
+        <div className={styles.desc}>{description}</div>
+      </div>
+    </motion.div>
   );
 };
 

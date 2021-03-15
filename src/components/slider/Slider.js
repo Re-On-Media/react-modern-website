@@ -1,39 +1,27 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Slider.module.css";
-import Slide from "./Slide";
-import { motion, AnimatePresence } from "framer-motion";
+import { slides } from "./Slides";
+import { AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const slideVariants = {
-  hidden: {
-    x: "200vw",
-  },
-  show: {
-    x: "0vw",
-    transition: {
-      ease: "easeInOut",
-      duration: 0.2,
-    },
-  },
-  exit: {
-    x: "-100vw",
-    transition: {
-      ease: "easeInOut",
-      duration: 0.2,
-    },
-  },
-};
-
 const Slider = ({ scrollPosition }) => {
+  //Control slider pagination
   const [next, setNext] = useState(0);
-  const [ref, inView, entry] = useInView({ threshold: 0.29 });
+  //Controll the position of the slider inside its container
   const [sliderPos, setSliderPos] = useState("sliderContainerTop");
+  //Control if scrolling up or down
   const [scrollPos, setScrollPos] = useState(0);
+  //Control the pagination speed
+  const [paginateOnScroll, setPaginateOnScroll] = useState(0);
 
+  const [ref, inView, entry] = useInView({ threshold: 0.19 });
+
+  //Put the slider to the top on first render
   useEffect(() => {
     setSliderPos("sliderContainerTop");
   }, []);
 
+  //Control the slider position as we scroll down or up
   useEffect(() => {
     if (!inView && scrollPosition < 1000) {
       setSliderPos("sliderContainerTop");
@@ -44,44 +32,25 @@ const Slider = ({ scrollPosition }) => {
     }
   }, [inView, scrollPosition]);
 
+  //Control pagination as we slide down or up
   useEffect(() => {
-    if (scrollPos > scrollPosition) {
-      console.log("scrolling up");
-    } else if (scrollPos < scrollPosition) {
-      console.log("scrolling down");
+    if (scrollPos > scrollPosition && inView) {
+      setPaginateOnScroll((prev) => prev - 5);
+      if (paginateOnScroll % 100 === 0) {
+        paginate();
+      }
+    } else if (scrollPos < scrollPosition && inView) {
+      setPaginateOnScroll((prev) => prev + 5);
+      if (paginateOnScroll % 100 === 0) {
+        paginate();
+      }
     }
 
     setScrollPos(scrollPosition);
   }, [scrollPosition]);
 
-  const slide1 = (
-    <motion.div
-      key="1"
-      variants={slideVariants}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
-      <Slide text="hola1" class1="fst" />
-    </motion.div>
-  );
-
-  const slide2 = (
-    <motion.div
-      key="2"
-      variants={slideVariants}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
-      <Slide text="hola2" class1="scd" />
-    </motion.div>
-  );
-
-  const ssld = [slide1, slide2];
-
   const paginate = () => {
-    if (next < ssld.length - 1) {
+    if (next < slides.length - 1) {
       setNext((prev) => prev + 1);
     } else {
       setNext(0);
@@ -96,7 +65,7 @@ const Slider = ({ scrollPosition }) => {
         }}
         className={styles[sliderPos]}
       >
-        <AnimatePresence exitBeforeEnter>{ssld[next]}</AnimatePresence>
+        <AnimatePresence exitBeforeEnter>{slides[next]}</AnimatePresence>
       </div>
     </div>
   );

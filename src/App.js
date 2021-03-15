@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Cover from "./components/cover/Cover";
 import Slider from "./components/slider/Slider";
 import Footer from "./components/footer/Footer";
+import Video from "./components/video/Videob";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
     <div className="App">
       <Cover />
       <Slider scrollPosition={scrollPosition} />
+      <Footer />
+      <Video />
       <Footer />
     </div>
   );

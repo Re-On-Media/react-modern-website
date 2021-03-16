@@ -11,10 +11,8 @@ const Slider = ({ scrollPosition }) => {
   const [sliderPos, setSliderPos] = useState("sliderContainerTop");
   //Control if scrolling up or down
   const [scrollPos, setScrollPos] = useState(0);
-  //Control the pagination speed
-  const [paginateOnScroll, setPaginateOnScroll] = useState(0);
 
-  const [ref, inView, entry] = useInView({ threshold: 0.19 });
+  const [ref, inView, entry] = useInView({ threshold: 0.189 });
 
   //Put the slider to the top on first render
   useEffect(() => {
@@ -30,24 +28,32 @@ const Slider = ({ scrollPosition }) => {
     } else if (!inView) {
       setSliderPos("sliderContainerBottom");
     }
-  }, [inView, scrollPosition]);
 
-  //Control pagination as we slide down or up
-  useEffect(() => {
-    if (scrollPos > scrollPosition && inView) {
-      setPaginateOnScroll((prev) => prev - 5);
-      if (paginateOnScroll % 100 === 0) {
-        paginate();
-      }
-    } else if (scrollPos < scrollPosition && inView) {
-      setPaginateOnScroll((prev) => prev + 5);
-      if (paginateOnScroll % 100 === 0) {
-        paginate();
-      }
+    let positionInsideDiv = scrollPosition - entry?.target.offsetTop;
+    console.log(entry);
+    if (positionInsideDiv < 1100 && next != 0) {
+      setNext(0);
     }
 
+    if (inView) {
+      if (positionInsideDiv > 1100 && positionInsideDiv <= 1900 && next != 1) {
+        setNext(1);
+      } else if (
+        positionInsideDiv > 1900 &&
+        positionInsideDiv <= 2800 &&
+        next != 2
+      ) {
+        setNext(2);
+      } else if (
+        positionInsideDiv > 2800 &&
+        positionInsideDiv < 4000 &&
+        next != 3
+      ) {
+        setNext(3);
+      }
+    }
     setScrollPos(scrollPosition);
-  }, [scrollPosition]);
+  }, [inView, scrollPosition]);
 
   const paginate = () => {
     if (next < slides.length - 1) {

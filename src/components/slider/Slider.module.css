@@ -1,5 +1,5 @@
 .container {
-  height: 400vh;
+  height: 500vh;
   position: relative;
   background-color: black;
   overflow-x: hidden;
@@ -12,6 +12,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  
 }
 
 .sliderContainerFixed {
@@ -20,6 +21,7 @@
   position: fixed;
   top: 0;
   left: 0;
+
 }
 
 .sliderContainerBottom {
@@ -32,6 +34,8 @@
 
 .slide {
   height: 100vh;
+  overflow-x: hidden;
+  
 }
 
 

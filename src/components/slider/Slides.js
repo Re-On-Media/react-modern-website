@@ -1,29 +1,37 @@
 import React from "react";
+import digitalsolutions from "../../media/digitalsolutions.png";
+import webdev from "../../media/webdev.png";
+import smartphone from "../../media/smartphone.png";
+import test from "../../media/problem-3303396_1280.png";
 import Slide from "./Slide";
 
 const slidesInfo = [
   {
-    title: "FIRST SLIDE",
-    img: "First image",
-    description: "Slide description",
+    title: "Digital Solutions",
+    img: digitalsolutions,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio.",
     aditionalClass: "fst",
   },
   {
-    title: "SECOND SLIDE",
-    img: "First image",
-    description: "Slide description",
+    title: "Web Development",
+    img: webdev,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio.",
     aditionalClass: "scd",
   },
   {
-    title: "THIRD SLIDE",
-    img: "First image",
-    description: "Slide description",
+    title: "Mobile Apps",
+    img: smartphone,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio.",
     aditionalClass: "fst",
   },
   {
     title: "FOUTH SLIDE",
-    img: "First image",
-    description: "Slide description",
+    img: test,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio. orem ipsum dolor sit amet consectetur adipisicing elit. Error, distinctio.",
     aditionalClass: "scd",
   },
 ];

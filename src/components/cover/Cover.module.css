@@ -1,15 +1,57 @@
 .container {
-  background-color: black;
   color: white;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
 
+.video {
+  background-color: black;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
 }
 
 .title {
   text-align: center;
-  font-size: 3rem;
-  font-family: 'Poppins', sans-serif;
+  margin-bottom: 50px;
+  font-size: 4rem;
+}
+
+.moto {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.scrollDownContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollDown {
+  width: 30px;
+  height: 60px;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.scrollDown > div {
+  background-color: black;
+  width: 80%;
+  height: 40%;
+  margin: 2px auto 2px;
+  border-radius: 50%;
+}
+
+.scrollDownContainer > span {
+  margin: 30px 0 0 20px;
 }

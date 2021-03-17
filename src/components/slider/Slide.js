@@ -10,14 +10,54 @@ const slideVariants = {
     x: "0vw",
     transition: {
       ease: "easeInOut",
-      duration: 0.5,
+      duration: 0.3,
+      delayChildren: 0.5,
     },
   },
   exit: {
     x: "-100vw",
     transition: {
       ease: "easeInOut",
+      duration: 0.3,
+    },
+  },
+};
+
+const titleItemVariant = {
+  hidden: {
+    y: "-50vh",
+  },
+  show: {
+    y: "0vw",
+    transition: {
+      ease: "easeInOut",
+      duration: 0.2,
+    },
+  },
+};
+
+const leftItemVariant = {
+  hidden: {
+    x: "-200vw",
+  },
+  show: {
+    x: "0vw",
+    transition: {
+      ease: "easeInOut",
       duration: 0.5,
+    },
+  },
+};
+
+const rightItemVariant = {
+  hidden: {
+    x: "200vw",
+  },
+  show: {
+    x: "0vw",
+    transition: {
+      ease: "easeInOut",
+      duration: 0.2,
     },
   },
 };
@@ -31,10 +71,17 @@ const Slide = ({ title, img, description, aditionalClass }) => {
       exit="exit"
       className={`${styles[aditionalClass]} ${styles.slideContainer}`}
     >
-      <h1 className={styles.title}>{title}</h1>
+      <motion.div className={styles.title} variants={titleItemVariant}>
+        <h2>Our services</h2>
+        <h1>{title}</h1>
+      </motion.div>
       <div className={styles.info}>
-        <div className={styles.img}>{img}</div>
-        <div className={styles.desc}>{description}</div>
+        <motion.div className={styles.img} variants={leftItemVariant}>
+          <img src={img} alt="" />
+        </motion.div>
+        <motion.div className={styles.desc} variants={rightItemVariant}>
+          <p>{description}</p>
+        </motion.div>
       </div>
     </motion.div>
   );

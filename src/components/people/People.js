@@ -30,9 +30,9 @@ const People = () => {
       <IsOnScreen>
         <div className={styles.info}>
           <motion.h2
-            initial={{ x: "-100vh" }}
+            initial={{ x: "-150vh" }}
             animate={{ x: 0 }}
-            transition={{ type: "spring", duration: 1, bounce: 0.35 }}
+            transition={{ type: "spring", duration: 1, bounce: 0.35, delay: 1 }}
           >
             Connecting People to What Matters
           </motion.h2>

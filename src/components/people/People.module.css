@@ -1,9 +1,11 @@
 .container {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     background-color: black;
     overflow-x: hidden;
     box-sizing: border-box;
+    margin-bottom: 100vh;
+    z-index: -3;
 }
 
 
@@ -18,7 +20,7 @@
     font-size: 3rem;
     text-align: center;
     height: 20vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 100px 0 100px 0;
 }
 

@@ -30,22 +30,24 @@ const Slider = ({ scrollPosition }) => {
     }
 
     let positionInsideDiv = scrollPosition - entry?.target.offsetTop;
-    console.log(entry);
-    if (positionInsideDiv < 1100 && next != 0) {
-      setNext(0);
-    }
 
     if (inView) {
-      if (positionInsideDiv > 1100 && positionInsideDiv <= 1900 && next != 1) {
+      if (positionInsideDiv < 800 && next != 0) {
+        setNext(0);
+      } else if (
+        positionInsideDiv >= 800 &&
+        positionInsideDiv <= 1700 &&
+        next != 1
+      ) {
         setNext(1);
       } else if (
-        positionInsideDiv > 1900 &&
-        positionInsideDiv <= 2800 &&
+        positionInsideDiv > 1700 &&
+        positionInsideDiv <= 2500 &&
         next != 2
       ) {
         setNext(2);
       } else if (
-        positionInsideDiv > 2800 &&
+        positionInsideDiv > 2500 &&
         positionInsideDiv < 4000 &&
         next != 3
       ) {

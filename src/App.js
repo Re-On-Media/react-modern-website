@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Cover from "./components/cover/Cover";
+import Intro from "./components/intro/Intro";
 import Slider from "./components/slider/Slider";
 import Footer from "./components/footer/Footer";
-import People from "./components/people/People";
+import Map from "./components/people/Map";
 import "./App.css";
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
   return (
     <div className="App">
       <Cover />
+      <Intro />
       <Slider scrollPosition={scrollPosition} />
-      <People />
+      <Map />
       <Footer />
     </div>
   );

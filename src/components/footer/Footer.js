@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-info">
-        <h1>Reon : Media</h1>
+        <h1>Tech : Expert</h1>
         <p>Based in Your City</p>
       </div>
       <div className="footer-contact">
@@ -13,7 +13,7 @@ const Footer = () => {
         <p>And let's get down to work</p>
       </div>
       <div className="footer-sns">
-        <div className="design-by">Design By Re-On : Media</div>
+        <div className="design-by">Design by Tech : Expert</div>
         <div className="sns-links">
           <a href="https://linkedin.com" target="_blank" rel="noreferrer">
             <i className="fab fa-linkedin linkedin"></i>

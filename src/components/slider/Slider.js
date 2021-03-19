@@ -9,8 +9,9 @@ const Slider = ({ scrollPosition }) => {
   const [next, setNext] = useState(0);
   //Controll the position of the slider inside its container
   const [sliderPos, setSliderPos] = useState("sliderContainerTop");
-  //Control if scrolling up or down
-  const [scrollPos, setScrollPos] = useState(0);
+
+  //Calculate position and height
+  const [positionInsideDiv, setPositionInsideDiv] = useState(0);
 
   const [ref, inView, entry] = useInView({ threshold: 0.189 });
 
@@ -21,41 +22,42 @@ const Slider = ({ scrollPosition }) => {
 
   //Control the slider position as we scroll down or up
   useEffect(() => {
-    if (!inView && scrollPosition < 1000) {
+    setPositionInsideDiv(scrollPosition - entry?.target.offsetTop);
+    if (!inView && positionInsideDiv < 0) {
       setSliderPos("sliderContainerTop");
-    } else if (inView && scrollPosition >= 1000) {
+    } else if (inView && positionInsideDiv >= 0) {
       setSliderPos("sliderContainerFixed");
-    } else if (!inView) {
+    } else if (!inView && scrollPosition > 4000) {
       setSliderPos("sliderContainerBottom");
     }
+  }, [scrollPosition, entry?.target.offsetTop, inView, positionInsideDiv]);
 
-    let positionInsideDiv = scrollPosition - entry?.target.offsetTop;
-
+  useEffect(() => {
     if (inView) {
-      if (positionInsideDiv < 800 && next != 0) {
+      if (positionInsideDiv < 800 && next !== 0) {
         setNext(0);
       } else if (
         positionInsideDiv >= 800 &&
         positionInsideDiv <= 1700 &&
-        next != 1
+        next !== 1
       ) {
         setNext(1);
       } else if (
         positionInsideDiv > 1700 &&
         positionInsideDiv <= 2500 &&
-        next != 2
+        next !== 2
       ) {
         setNext(2);
       } else if (
         positionInsideDiv > 2500 &&
         positionInsideDiv < 4000 &&
-        next != 3
+        next !== 3
       ) {
         setNext(3);
       }
     }
-    setScrollPos(scrollPosition);
-  }, [inView, scrollPosition]);
+    //setScrollPos(scrollPosition);
+  }, [inView, next, positionInsideDiv]);
 
   const paginate = () => {
     if (next < slides.length - 1) {

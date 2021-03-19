@@ -7,6 +7,8 @@
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .video {

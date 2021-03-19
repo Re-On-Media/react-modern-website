@@ -22,8 +22,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  overflow-x: hidden;
-  overflow-y: hidden
+  overflow: hidden;
 }
 
 .sliderContainerBottom {
@@ -51,6 +50,7 @@
   align-items: center;
   background-color: black;
   color: white;
+  overflow: hidden;
 }
 
 .title {

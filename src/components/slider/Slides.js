@@ -2,8 +2,10 @@ import React from "react";
 import digitalsolutions from "../../media/digitalsolutions.png";
 import webdev from "../../media/webdev.png";
 import smartphone from "../../media/smartphone.png";
-import test from "../../media/problem-3303396_1280.png";
+import test from "../../media/businessman.png";
 import Slide from "./Slide";
+
+//https://pixabay.com/illustrations/man-working-business-office-work-4365597/
 
 const slidesInfo = [
   {

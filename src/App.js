@@ -3,7 +3,7 @@ import Cover from "./components/cover/Cover";
 import Intro from "./components/intro/Intro";
 import Slider from "./components/slider/Slider";
 import Footer from "./components/footer/Footer";
-import Map from "./components/people/Map";
+import Map from "./components/map/Map";
 import "./App.css";
 
 function App() {

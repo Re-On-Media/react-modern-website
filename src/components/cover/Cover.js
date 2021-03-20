@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import React from "react";
+import { motion } from "framer-motion";
 import IsOnScreen from "../IsOnScreen";
 import coverVideo from "../../media/covervideo1.mp4";
-
 import styles from "./Cover.module.css";
 
 const sentenceVariants = {
@@ -10,7 +9,7 @@ const sentenceVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.05,
+      delay: 0.01,
       staggerChildren: 0.02,
     },
   },
@@ -41,44 +40,30 @@ const loaderVariants = {
 };
 
 const Cover = () => {
-  const line1 =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, quisquam.";
-  const line2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
+  const line =
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, minus ut! Eveniet modi corrupti minima placeat, mollitia provident tenetur numquam consequatur magni adipisci. Iure quos eaque quod, voluptates suscipit placeat.";
 
   return (
     <div className={styles.container}>
       <video className={styles.video} src={coverVideo} autoPlay loop muted />
+
       <IsOnScreen>
-        <motion.h1
-          className={styles.title}
-          initial={{ x: "-100vw" }}
-          animate={{ x: "0" }}
-          transition={{ type: "spring", duration: 1, bounce: 0.35 }}
-        >
-          Tech : Expert
-        </motion.h1>
-        <motion.h1
+        <h1 className={styles.title}>Tech : Expert</h1>
+        <motion.div
           variants={sentenceVariants}
           initial="hidden"
           animate="visible"
           className={styles.moto}
         >
-          {line1.split("").map((char, index) => {
+          {line.split("").map((char, index) => {
             return (
-              <motion.span key={char + "_" + index} variants={letter}>
+              <motion.span key={index} variants={letter}>
                 {char}
               </motion.span>
             );
           })}
+        </motion.div>
 
-          {line2.split("").map((char, index) => {
-            return (
-              <motion.span key={char + "_" + index} variants={letter}>
-                {char}
-              </motion.span>
-            );
-          })}
-        </motion.h1>
         <div className={styles.scrollDownContainer}>
           <div className={styles.scrollDown}>
             <motion.div

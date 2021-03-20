@@ -13,15 +13,16 @@
 .info {
   display: flex;
   flex-direction: column;
+  height: 30vh;
 }
 
-.info > h1 {
+.info > div > h1 {
   font-size: 4rem;
   text-align: center;
-  margin: 50px 0 20px 0;
+  margin: 100px 0 20px 0;
 }
 
-.info > h4 {
+.info > div > h4 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.2rem;

@@ -7,14 +7,13 @@ import imageRight from "../../media/rightteam.jpg";
 
 const introVariants = {
   hidden: {
-    x: "-150vw",
+    scale: 0,
   },
   show: {
-    x: 0,
+    scale: 1,
     transition: {
-      type: "spring",
-      duration: 1.3,
-      bounce: 0.35,
+      ease: "easeInOut",
+      duration: 0.5,
     },
   },
 };
@@ -22,7 +21,7 @@ const introVariants = {
 const Intro = () => {
   return (
     <div className={styles.container}>
-      <motion.div className={styles.infoContainer}>
+      <div className={styles.infoContainer}>
         <IsOnScreen>
           <motion.h1 variants={introVariants} initial="hidden" animate="show">
             Our team of experts
@@ -31,7 +30,7 @@ const Intro = () => {
             Always ready for you
           </motion.h3>
         </IsOnScreen>
-      </motion.div>
+      </div>
       <div className={styles.imgContainer}>
         <img src={imageLeft} alt="" />
         <img src={imageRight} alt="" />

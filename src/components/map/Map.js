@@ -38,7 +38,7 @@ const Map = () => {
         allowFullScreen=""
         loading="lazy"
       ></iframe>
-      <p className={styles.address}>Gran Vía, 32, piso 8, Madrid</p>
+      <p className={styles.address}>Calle asdasd, , piso 10, Salamanca</p>
     </div>
   );
 };

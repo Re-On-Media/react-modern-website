@@ -10,8 +10,8 @@ const slideVariants = {
     x: "0vw",
     transition: {
       ease: "easeInOut",
-      duration: 0.3,
-      delayChildren: 0.5,
+      duration: 0.1,
+      delayChildren: 0.3,
     },
   },
   exit: {

@@ -1,32 +1,31 @@
 .container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .infoContainer {
-    padding-top: 100px;
-    color: white;
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    left: 0;
-    z-index: 2;
-    font-size: 1.5rem;
+  padding-top: 100px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  font-size: 1.5rem;
 }
 
-.infoContainer > h1 {
-    margin-bottom: 20px;
+.infoContainer > div > h1 {
+  margin-bottom: 40px;
 }
 
 .imgContainer {
-    display: flex;
-    background-color: black;
+  display: flex;
+  background-color: black;
 }
 
-
 .imgContainer > img {
-    display: inline-block;
-    width: 50%;
-    opacity: 0.4;
+  display: inline-block;
+  width: 50%;
+  opacity: 0.3;
 }

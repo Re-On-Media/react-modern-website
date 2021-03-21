@@ -15,7 +15,7 @@ const sentenceVariants = {
   },
 };
 
-const letter = {
+const opacityVariants = {
   hidden: {
     opacity: 0,
   },
@@ -48,7 +48,14 @@ const Cover = () => {
       <video className={styles.video} src={coverVideo} autoPlay loop muted />
 
       <IsOnScreen>
-        <h1 className={styles.title}>Tech : Expert</h1>
+        <motion.h1
+          variants={opacityVariants}
+          initial="hidden"
+          animate="visible"
+          className={styles.title}
+        >
+          Tech : Expert
+        </motion.h1>
         <motion.div
           variants={sentenceVariants}
           initial="hidden"
@@ -57,14 +64,19 @@ const Cover = () => {
         >
           {line.split("").map((char, index) => {
             return (
-              <motion.span key={index} variants={letter}>
+              <motion.span key={index} variants={opacityVariants}>
                 {char}
               </motion.span>
             );
           })}
         </motion.div>
 
-        <div className={styles.scrollDownContainer}>
+        <motion.div
+          variants={opacityVariants}
+          initial="hidden"
+          animate="visible"
+          className={styles.scrollDownContainer}
+        >
           <div className={styles.scrollDown}>
             <motion.div
               variants={loaderVariants}
@@ -73,7 +85,7 @@ const Cover = () => {
             ></motion.div>
           </div>
           <span>Scroll down</span>
-        </div>
+        </motion.div>
       </IsOnScreen>
     </div>
   );

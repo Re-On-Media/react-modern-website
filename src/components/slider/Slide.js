@@ -69,7 +69,7 @@ const Slide = ({ title, img, description, aditionalClass }) => {
       initial="hidden"
       animate="show"
       exit="exit"
-      className={`${styles[aditionalClass]} ${styles.slideContainer}`}
+      className={styles.slideContainer}
     >
       <motion.div className={styles.title} variants={titleItemVariant}>
         <h2>Our services</h2>

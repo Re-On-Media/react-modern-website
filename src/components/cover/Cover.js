@@ -60,7 +60,7 @@ const Cover = () => {
           variants={sentenceVariants}
           initial="hidden"
           animate="visible"
-          className={styles.moto}
+          className={styles.message}
         >
           {line.split("").map((char, index) => {
             return (

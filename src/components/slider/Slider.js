@@ -15,11 +15,6 @@ const Slider = ({ scrollPosition }) => {
 
   const [ref, inView, entry] = useInView({ threshold: 0.189 });
 
-  //Put the slider to the top on first render
-  useEffect(() => {
-    setSliderPos("sliderContainerTop");
-  }, []);
-
   //Control the slider position as we scroll down or up
   useEffect(() => {
     setPositionInsideDiv(scrollPosition - entry?.target.offsetTop);

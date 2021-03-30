@@ -27,13 +27,14 @@ const Intro = () => {
             Our team of experts
           </motion.h1>
           <motion.h3 variants={introVariants} initial="hidden" animate="show">
-            Always ready for you
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
+            ex.
           </motion.h3>
         </IsOnScreen>
       </div>
       <div className={styles.imgContainer}>
-        <img src={imageLeft} alt="" />
-        <img src={imageRight} alt="" />
+        <img src={imageLeft} className={styles.imageLeft} alt="imageleft" />
+        <img src={imageRight} className={styles.imageRight} alt="imageRight" />
       </div>
     </div>
   );

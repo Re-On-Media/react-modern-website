@@ -38,7 +38,7 @@ const Map = () => {
         allowFullScreen=""
         loading="lazy"
       ></iframe>
-      <p className={styles.address}>Calle asdasd, , piso 10, Salamanca</p>
+      <p className={styles.address}>Asdasd Street, 10, Your City</p>
     </div>
   );
 };

@@ -3,9 +3,8 @@
   position: relative;
   background-color: black;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
 
 .sliderContainerTop {
   height: 100vh;
@@ -13,7 +12,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  
 }
 
 .sliderContainerFixed {
@@ -36,8 +34,6 @@
 .slide {
   height: 100vh;
 }
-
-
 
 /*Slides*/
 
@@ -63,7 +59,7 @@
 }
 
 .title > h1 {
-  font-size: 4rem; 
+  font-size: 4rem;
   font-weight: 900;
 }
 
@@ -74,10 +70,9 @@
   height: 80vh;
 }
 
-.info div {
+.info > div {
   width: 100%;
   text-align: center;
-  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,5 +91,27 @@
 
 .desc > p {
   width: 70%;
+  font-size: 2rem;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 960px) {
+  .title {
+    margin-top: 5px;
+  }
+
+  .title > h2 {
+    font-size: 1rem;
+  }
+
+  .title > h1 {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  .desc > p {
+    width: 70%;
+    font-size: 1rem;
+    margin: 0 auto;
+  }
 }

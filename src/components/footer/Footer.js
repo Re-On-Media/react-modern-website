@@ -6,11 +6,10 @@ const Footer = () => {
     <footer className={styles.container}>
       <div className={styles.info}>
         <h1>Tech : Expert</h1>
-        <p>Based in Your City</p>
+        <p>Asdasd Street, 10, Your City</p>
       </div>
       <div className={styles.contact}>
-        <h3>Contact me</h3>
-        <p>And let's get down to work</p>
+        <h3>Always here for you</h3>
       </div>
       <div className={styles.sns}>
         <div className={styles.design}>Design by Tech : Expert</div>
